@@ -1,11 +1,13 @@
-import { Comments } from "./components/Comments";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { Comments } from "./view/Comments";
+import { Route, Routes } from "react-router-dom";
+import { Description } from "./view/Description";
 
 const App = () => {
   return (
-    <>
-      <Comments />
-    </>
+    <Routes>
+      <Route path="/" element={<Comments />} />
+      <Route path="/:postId" element={<Description />} />
+    </Routes>
   );
 };
 
